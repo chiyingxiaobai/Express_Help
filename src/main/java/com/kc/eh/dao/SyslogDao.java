@@ -1,4 +1,4 @@
-package com.kc.dao;
+package com.kc.eh.dao;
 
 
 import java.util.Map;

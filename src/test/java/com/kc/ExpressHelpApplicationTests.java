@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.kc.dao.SyslogDao;
+import com.kc.eh.dao.SyslogDao;
 import com.kc.test.DefaultCache;
 @RunWith(SpringRunner.class)  //@RunWith() 运行器
 //SpringRunner 继承了SpringJUnit4ClassRunner，没有扩展任何功能；使用前者，名字简短而已
