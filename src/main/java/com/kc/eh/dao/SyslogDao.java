@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface SyslogDao {
-	@Delete("delete from student where id = #{id}")
+	@Delete("delete from sys_logs where id = #{id}")
 	int deleteObject(Integer id);
 	
 	
