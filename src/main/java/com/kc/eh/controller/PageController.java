@@ -25,6 +25,11 @@ public class PageController {
 		return "common/page";
 	}
 	
+	@RequestMapping("doFilesUpload")
+	public String doFilesUpload() {
+		return "common/filesUpload";
+	}
+	
 	@RequestMapping("/doLoginUI")
 	public String doLoginUI() {
 		return "login";

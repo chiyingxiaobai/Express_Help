@@ -262,6 +262,7 @@ desired effect
             <li><a id="load-type-id">类目管理</a></li>
             <li><a id="load-brand-id">品牌管理</a></li>
             <li><a id="load-attr-id">属性管理</a></li>
+            <li><a id="files-upload-id">文件上传</a></li>
         </ul>
         </li> 
         <li class="treeview">
@@ -422,6 +423,7 @@ desired effect
 <script type="text/javascript">
       $(function(){//页面加载完成之后执行
     	  doLoadUI("load-log-id","log/log_list");
+    	  doLoadUI("files-upload-id","doFilesUpload");
       });
       function doLoadUI(id,url){
     	  //var dom=document.getElementById(id);
