@@ -40,6 +40,7 @@ public class SpringShiroConfig {
 		map.put("/dist/**", "anon");
 		map.put("/plugins/**", "anon");
 		map.put("/user/doLogin", "anon");
+		map.put("/doSayHello", "anon");
 		map.put("/doLogout", "logout");   //退出登录
 		//除了匿名访问的资源,其它都要认证("authc")后访问
 		map.put("/**", "authc");

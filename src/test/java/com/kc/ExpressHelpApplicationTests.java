@@ -50,4 +50,6 @@ class ExpressHelpApplicationTests {
 		Map<String, Object> resultMap =  syslogdao.findObject(1);
 		System.out.println(resultMap);
 	}
+	
+	
 }
