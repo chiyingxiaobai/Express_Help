@@ -10,7 +10,7 @@ server:
 #spring 
 spring:
   datasource:
-    url: jdbc:mysql://47.57.161.69:3306/jtsys?serverTimezone=GMT%2B8&characterEncoding=utf8
+    url: jdbc:mysql://159.75.123.18:3306/jtsys?serverTimezone=GMT%2B8&characterEncoding=utf8
     username: root
     password: 123456
   thymeleaf:

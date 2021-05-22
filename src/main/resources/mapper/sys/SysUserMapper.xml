@@ -3,10 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kc.eh.dao.SysUserDao">
+	<resultMap type="com.kc.eh.vo.SysUserDeptVo" id="sysUserMap">
+		<association property="sysDept" 
+					column="deptId" 
+					select="com.kc.eh.dao.SysDeptDao.findById">
+		</association>
+	</resultMap>
 	<select id="findUserByUserName" parameterType="String" 
 		resultType="com.kc.eh.entity.SysUser">
 		select *
 		from sys_users
 		where username=#{username}
 	</select>
+	
+	<select id="findPageObjects"
+             resultMap="sysUserMap">
+           select * from sys_users
+           <include refid="queryWhereId"/>
+           limit #{startIndex},#{pageSize}
+     </select>
+     <select id="getRowCount"
+             resultType="int">
+         select count(*) from sys_users
+         <include refid="queryWhereId"/>
+     </select>
+     <sql id="queryWhereId">
+       <where>
+              <if test="username!=null and username!=''">
+                 username like concat("%",#{username},"%")
+              </if>
+       </where>
+     </sql>
 </mapper>

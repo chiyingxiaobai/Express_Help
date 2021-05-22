@@ -138,7 +138,7 @@
 	   doGetObjects();
    }
    //页面加载完成异步加载当前页数据
-   function doGetObjects(){
+   /* function doGetObjects(){
 	   var url="user/doFindPageObjects";
 	   var pageCurrent=$("#pageId").data("pageCurrent");
 	   if(!pageCurrent)pageCurrent=1;
@@ -149,7 +149,21 @@
 		   console.log(result);
 		   doHandleResponseResult(result);
 	   });
+   } */
+   
+   function doGetObjects(){
+	   var url="user";
+	   var pageCurrent=$("#pageId").data("pageCurrent");
+	   if(!pageCurrent)pageCurrent=1;
+	   var username=$("#searchNameId").val().trim();
+	   if(!username)username="nullStr"
+	   url = url + "/" + pageCurrent + "/" + username;
+	   $.getJSON(url,function(result){
+		   console.log(result);
+		   doHandleResponseResult(result);
+	   });
    }
+   
    function doHandleResponseResult(result){
 	   if(result.state==1){
 		  doSetTableBodyRows(result.data.records);
